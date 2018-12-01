@@ -129,7 +129,14 @@ class _TweetWebViewState extends State<TweetWebView> {
       return null;
     }
 
-    final item = json.decode(jsonString);
+    var item = null;
+    try {
+      item = json.decode(jsonString);
+    } catch (e) {
+      print(e);
+      print('error parsing tweet json: $jsonString');
+      return '<p>error loading tweet</p>';
+    }
 
     final String html = item['html'];
 
