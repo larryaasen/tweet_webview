@@ -34,7 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Tweet WebView Example 1'),
       ),
-      body: TweetWebView.tweetUrl("https://twitter.com/Interior/status/463440424141459456"),
+      body: TweetWebView.tweetUrl(
+          "https://twitter.com/Interior/status/463440424141459456"),
     );
   }
 }

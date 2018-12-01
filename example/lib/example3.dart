@@ -39,7 +39,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Widget _buildBody() {
-    final tweets = ['1065424382292566017', '1068219397293125633', '1068551446029832192', '1065362290512293888'];
+    final tweets = [
+      '1065424382292566017',
+      '1068219397293125633',
+      '1068551446029832192',
+      '1065362290512293888'
+    ];
 
     final list = ListView.builder(
       scrollDirection: Axis.vertical,
@@ -53,12 +58,9 @@ class _MyHomePageState extends State<MyHomePage> {
       },
     );
 
-    final container = Container(
-        color: Colors.black26,
-        child: Center(child: list)
-    );
+    final container =
+        Container(color: Colors.black26, child: Center(child: list));
 
     return container;
-
   }
 }

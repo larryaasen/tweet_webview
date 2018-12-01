@@ -20,8 +20,12 @@ class TweetWebView extends StatefulWidget {
 
   TweetWebView({this.tweetUrl, this.tweetID});
 
-  TweetWebView.tweetID(String tweetID) : this.tweetID = tweetID, this.tweetUrl = null;
-  TweetWebView.tweetUrl(String tweetUrl) : this.tweetUrl = tweetUrl, this.tweetID = null;
+  TweetWebView.tweetID(String tweetID)
+      : this.tweetID = tweetID,
+        this.tweetUrl = null;
+  TweetWebView.tweetUrl(String tweetUrl)
+      : this.tweetUrl = tweetUrl,
+        this.tweetID = null;
 
   @override
   _TweetWebViewState createState() => new _TweetWebViewState();
@@ -102,7 +106,7 @@ class _TweetWebViewState extends State<TweetWebView> {
   String _tweetIDFromUrl(String tweetUrl) {
     final uri = Uri.parse(tweetUrl);
     if (uri.pathSegments.length > 0) {
-      return uri.pathSegments[uri.pathSegments.length-1];
+      return uri.pathSegments[uri.pathSegments.length - 1];
     }
     return null;
   }
