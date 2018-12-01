@@ -55,9 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final container = Container(
         color: Colors.black26,
-        child: Center(child:
-        list,
-        )
+        child: Center(child: list)
     );
 
     return container;
