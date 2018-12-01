@@ -10,39 +10,38 @@ import 'package:tweet_webview/tweet_webview.dart';
 
 void main() {
   testWidgets('Widget test', (WidgetTester tester) async {
-//    await tester.pumpWidget(TweetWebView(tweetUrl: 'https://twitter.com/Interior/status/463440424141459456'));
-    await tester.pumpWidget(MyWidget(message: 'message', title: 'title'));
+    await tester.pumpWidget(MyWidget());
 
-    expect(find.text('title'), findsOneWidget);
-    expect(find.text('Loading...'), findsOneWidget);
+    expect(find.text('TweetWebView test'), findsOneWidget);
+    expect(find.text('Loading...'), findsNWidgets(4));
 
-    sleep(const Duration(seconds:13));
+    sleep(const Duration(seconds:1));
 
-    expect(find.text('Loading...'), findsOneWidget);
+    expect(find.text('Loading...'), findsNWidgets(4));
   });
 }
 
 class MyWidget extends StatelessWidget {
-  final String title;
-  final String message;
-
   const MyWidget({
     Key key,
-    @required this.title,
-    @required this.message,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final tweet = TweetWebView(tweetUrl: 'https://twitter.com/Interior/status/463440424141459456');
+    final tweet1 = TweetWebView(tweetUrl: 'https://twitter.com/Interior/status/463440424141459456');
+    final tweet2 = TweetWebView(tweetID: '463440424141459456');
+    final tweet3 = TweetWebView.tweetUrl('https://twitter.com/Interior/status/463440424141459456');
+    final tweet4 = TweetWebView.tweetID('463440424141459456');
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'TweetWebView test',
       home: Scaffold(
         appBar: AppBar(
-          title: Text(title),
+          title: Text('TweetWebView test'),
         ),
-        body: Center(
-          child: tweet,
+        body: Column(
+          children: <Widget>[
+            tweet1, tweet2, tweet3, tweet4
+          ],
         ),
       ),
     );
