@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2018 Larry Aasen. All rights reserved.
+ */
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
