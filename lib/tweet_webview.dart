@@ -50,9 +50,7 @@ class _TweetWebViewState extends State<TweetWebView> {
 
       // Create the WebView to contian the tweet HTML
       final webView = WebView(
-        initialUrl: downloadUrl,
-        javaScriptMode: JavaScriptMode.unrestricted,
-      );
+          initialUrl: downloadUrl, javascriptMode: JavascriptMode.unrestricted);
 
       // The WebView creates an exception: RenderAndroidView object was given an infinite size during layout.
       // To avoid that exception a max height constraint will be used. Hopefully soon the WebView will be able
@@ -129,7 +127,7 @@ class _TweetWebViewState extends State<TweetWebView> {
       return null;
     }
 
-    var item = null;
+    var item;
     try {
       item = json.decode(jsonString);
     } catch (e) {
