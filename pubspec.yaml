@@ -1,6 +1,6 @@
 name: tweet_webview
 description: A Flutter widget to display a Twitter tweet in a WebView widget using webview_flutter.
-version: 0.1.0
+version: 0.2.0
 author: Larry Aasen <larryaasen@gmail.com>
 homepage: https://github.com/larryaasen/tweet_webview
 
